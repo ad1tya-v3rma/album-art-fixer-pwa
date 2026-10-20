@@ -1,0 +1,69 @@
+
+:root {
+  font-family: system-ui, sans-serif;
+  color: #f3f4f6;
+  background: #0b1120;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+
+body { margin: 0; }
+#app { max-width: 850px; margin: auto; padding: 24px 16px; }
+
+header { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
+.logo {
+  width: 52px; height: 52px; display: grid; place-items: center;
+  border-radius: 15px; background: #2563eb; font-size: 30px;
+}
+h1 { font-size: 24px; margin: 0; }
+h2 { font-size: 18px; margin-top: 0; }
+p { color: #a7b2c5; line-height: 1.55; }
+
+.panel, .stats article {
+  background: #151e30; border: 1px solid #29364b;
+  border-radius: 16px; padding: 20px; margin-bottom: 16px;
+}
+.picker {
+  display: block; padding: 17px; text-align: center;
+  border: 1px dashed #64748b; border-radius: 12px; cursor: pointer;
+  margin: 20px 0;
+}
+.picker input { display: none; }
+
+.option { display: flex; align-items: center; gap: 10px; margin: 18px 0; }
+input[type=checkbox] { width: 18px; height: 18px; accent-color: #3b82f6; }
+
+button {
+  background: #2563eb; color: white; border: 0;
+  border-radius: 10px; padding: 13px 18px;
+  font: inherit; font-weight: 600; cursor: pointer;
+}
+button:disabled { opacity: .45; cursor: not-allowed; }
+button.secondary { background: #27364c; }
+
+#scan { width: 100%; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.stats article { display: flex; flex-direction: column; gap: 8px; }
+.stats span { color: #a7b2c5; font-size: 13px; }
+.stats strong { font-size: 28px; }
+
+.results-heading { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.result { padding: 14px 0; border-bottom: 1px solid #29364b; overflow-wrap: anywhere; }
+.result:last-child { border-bottom: 0; }
+.filename { font-weight: 600; }
+.status { font-size: 13px; color: #a7b2c5; margin-top: 6px; }
+.muted { color: #94a3b8; }
+
+.progress { height: 7px; background: #29364b; border-radius: 9px; overflow: hidden; margin-top: 18px; }
+#bar { width: 0; height: 100%; background: #60a5fa; transition: width .2s; }
+.hidden { display: none; }
+footer { text-align: center; padding: 24px 0; color: #94a3b8; font-size: 12px; }
+
+@media (max-width: 480px) {
+  #app { padding: 18px 12px; }
+  .panel { padding: 16px; }
+  .stats { gap: 7px; }
+  .stats article { padding: 12px 8px; }
+  .stats strong { font-size: 23px; }
+}
