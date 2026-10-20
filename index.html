@@ -1,0 +1,65 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111827">
+  <title>Album Art Fixer</title>
+</head>
+<body>
+<div id="app">
+  <header>
+    <div class="logo">♫</div>
+    <div>
+      <h1>Album Art Fixer</h1>
+      <p>Normalize your embedded album artwork</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>Music library</h2>
+      <p>Select your music files. On desktop, you can select an entire folder.</p>
+
+      <label class="picker">
+        <input id="files" type="file" multiple
+               accept=".flac,.m4a,audio/flac,audio/mp4"
+               webkitdirectory>
+        <span>Choose music folder</span>
+      </label>
+
+      <label class="option">
+        <input id="dryRun" type="checkbox" checked>
+        Scan only — don't convert files
+      </label>
+
+      <button id="scan">Scan library</button>
+      <div id="progress" class="progress hidden">
+        <div id="bar"></div>
+      </div>
+      <p id="message">Choose a folder to get started.</p>
+    </section>
+
+    <section class="stats">
+      <article><span>Files</span><strong id="total">0</strong></article>
+      <article><span>Need conversion</span><strong id="needs">0</strong></article>
+      <article><span>Errors</span><strong id="errors">0</strong></article>
+    </section>
+
+    <section class="panel">
+      <div class="results-heading">
+        <h2>Scan results</h2>
+        <button id="report" class="secondary" disabled>Export CSV</button>
+      </div>
+      <div id="results">
+        <p class="muted">Your results will appear here.</p>
+      </div>
+    </section>
+  </main>
+  <footer>Private by design · Files are processed on your device</footer>
+</div>
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
